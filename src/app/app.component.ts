@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+@Component({ //декоратор
+  selector: 'app-root',//идентификатор компонента в приложении
+  templateUrl: './app.component.html', //представление(ссылка на шаблон)
+  styleUrls: ['./app.component.css'] //массив стилей css
 })
 export class AppComponent {
   title = 'var8';

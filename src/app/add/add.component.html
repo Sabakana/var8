@@ -1,0 +1,25 @@
+<div class="m-3">
+    <h4>Добавление гостя в список</h4>
+
+    <form [formGroup]="itemForm" (ngSubmit)="add()"> 
+        <!-- является набором из нескольких FormControl. Модель FormGroup также используется для представления формы целиком. -->
+        <!-- для управления отправкой формы мы можем использовать событие ngSubmit, которое генерируется при нажатии на кнопку отправки -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Имя</span>
+          </div>
+          <input type="text" class="form-control" formControlName="name">
+          
+        </div>   
+        
+      
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Телефон</span>
+          </div>
+          <input type="text" class="form-control" formControlName="phone">
+        </div>
+
+        <button class="btn btn-success text-white" [disabled]="!itemForm.valid" type="submit">Сохранить</button>
+  </form>
+</div>

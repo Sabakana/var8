@@ -1,0 +1,22 @@
+<form *ngIf="guest" [formGroup]="itemForm"  (ngSubmit)="onSaveForm()" class="m-3">
+   
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Имя гостя</span>
+        </div>
+        <input type="text" class="form-control" formControlName="name">
+      </div>
+    
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Номер телефона</span>
+        </div>
+        <input type="text" class="form-control" formControlName="phone" >
+      </div>
+    
+  
+      <button class="btn btn-danger text-white mr-3" (click)="onDelete()">Удалить</button>
+      <button class="btn btn-info text-white" type="submit">Принять изменения</button>
+    
+  </form>
+  

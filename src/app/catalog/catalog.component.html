@@ -1,0 +1,26 @@
+  <div class="dropdown mr-3">
+          <div [formGroup]="sortForm">
+                  <select style="margin: 0px 10px" class="form-control" id="inputSort" formControlName="sort" (change)="sorting()">
+                    <option selected value="start">Сортировка</option>
+                    <option value="alfavit">По алфавиту от А до Я</option>
+                  </select>
+                </div>
+  </div>
+  <input style="margin: 0px 10px" class="form-control my-3" type="text" placeholder="Поиск" [(ngModel)]="searchstring" (blur)="filtering()">
+  <!-- привязка в оба направлени -->
+
+  <ul class="list-group m-3">
+    <li class="list-group-item" *ngFor="let i of guests | sort : searchstring : sortParam" [routerLink]="['/guest', i.id]">
+  <!-- ngFor директива для реализации вывода данных в цикле -->
+  <!-- один компонент,отображающий массив объектов guests -->
+      <p>Имя: {{i.name}}</p><br> 
+    <!-- передача строк -->
+  
+    <p>Номер телефона : {{i.phone}}</p><br>
+    <p>Id : {{i.id}}</p><br>
+    </li>
+  </ul>
+
+  <a class="btn btn-sm btn-success jopa" routerLink="catalog">наверх</a>
+<!-- dom - document object model - сопоставление элемента dom с именем внутри шаблона -->
+<!-- директивы ngIf для реализации функционала оператора условия -->
